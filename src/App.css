@@ -1,0 +1,58 @@
+/* Global page */
+body {
+  margin: 0;
+  background: #f5f6f8;
+  font-family: Arial, sans-serif;
+}
+
+/* App container */
+.app {
+  padding: 20px;
+}
+
+/* Title */
+.app-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Board layout */
+.board {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Column */
+.column {
+  width: 260px;
+  background: #e9ecef;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Column title */
+.column-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}

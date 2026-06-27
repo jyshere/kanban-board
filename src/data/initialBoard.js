@@ -1,0 +1,25 @@
+const initialBoard = {
+  id: "board-1",
+  title: "My Kanban Board",
+  columns: [
+    {
+      id: "col-1",
+      title: "To Do",
+      cards: [
+        { id: "c1", title: "Learn React" }
+      ]
+    },
+    {
+      id: "col-2",
+      title: "Doing",
+      cards: []
+    },
+    {
+      id: "col-3",
+      title: "Done",
+      cards: []
+    }
+  ]
+};
+
+export default initialBoard;
