@@ -35,8 +35,8 @@ export default function Column({ column, addCard, deleteCard, editCard,moveCard 
   return (
     <div className="column" onDrop={handleDrop} onDragOver={handleDragOver}>
       <div className="column-title">{column.title}</div>
-
-      {column.cards?.map((card) => (
+      <div>
+        {column.cards?.map((card) => (
 
         <Card key={card.id}
         card={card} 
@@ -44,6 +44,8 @@ export default function Column({ column, addCard, deleteCard, editCard,moveCard 
         columnId={column.id}
          editCard={editCard} />
       ))}
+      </div>
+      
 
       <div className="column-input-area">
         <input

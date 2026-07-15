@@ -3,10 +3,16 @@ import { useState } from "react";
 import initialBoards from "./data/initialBoards";
 import Board from "./components/Board";
 import BoardList from "./components/BoardList";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LandingPage from "./components/Landpage/LandingPage";
+import Login from "./components/Landpage/Login";
+import Signup from "./components/Landpage/Signup";
+
 
 export default function App() {
   const [boards, setBoards] = useState(initialBoards);
   const [selectedBoardId, setSelectedBoardId] = useState(null)
+  const [isLogin, setIsLogin] = useState(false);
 
   const currentBoard = boards.find((b) => (b.id === selectedBoardId));
 
@@ -34,7 +40,7 @@ export default function App() {
       ]
     };
 
-    setBoards([...boards,newBoard]);
+    setBoards([...boards, newBoard]);
     setSelectedBoardId(newBoard.id);
 
 
@@ -162,36 +168,58 @@ export default function App() {
 
   return (
     <div className="app">
+      {/*-------------- not logged in---------------------- */}
+      {!isLogin &&
+        <div className="Navbar">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
 
-  <div className="sidebar">
-    <h2>Boards</h2>
+            <Route path="/login" element={<Login />} />
 
-    <BoardList
-      boards={boards}
-      selectedBoardId={selectedBoardId}
-      setSelectedBoardId={setSelectedBoardId}
-      createBoard={createBoard}
-    />
-  </div>
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </div>
 
-  <div className="main-content">
+      }
 
-    {currentBoard && (
-      <>
-        <h1>{currentBoard.title}</h1>
+      {/* ---------------logged in------------------- */}
+      {isLogin &&
+        <>
+          <div className="sidebar">
 
-        <Board
-          board={currentBoard}
-          addCard={addCard}
-          deleteCard={deleteCard}
-          editCard={editCard}
-          moveCard={moveCard}
-        />
-      </>
-    )}
+            <BoardList
+              boards={boards}
+              selectedBoardId={selectedBoardId}
+              setSelectedBoardId={setSelectedBoardId}
+              createBoard={createBoard}
+            />
+          </div>
 
-  </div>
+          <div className="main-content">
 
-</div>
+            {currentBoard && (
+              <>
+                <h1>{currentBoard.title}</h1>
+
+                <Board
+                  board={currentBoard}
+                  addCard={addCard}
+                  deleteCard={deleteCard}
+                  editCard={editCard}
+                  moveCard={moveCard}
+                />
+              </>
+            )}
+
+          </div>
+
+        </>
+      }
+
+
+
+
+
+    </div>
   );
 }

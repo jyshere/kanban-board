@@ -32,7 +32,9 @@ body {
 ========================= */
 
 .column {
-  background: #f8fafc;
+  
+  background:;
+  
   width: 280px;
   min-height: 620px;
   border-radius: 12px;
