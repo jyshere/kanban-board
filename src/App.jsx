@@ -7,6 +7,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LandingPage from "./components/Landpage/LandingPage";
 import Login from "./components/Landpage/Login";
 import Signup from "./components/Landpage/Signup";
+import About from "./components/Landpage/About";
+import Dashboard from "./components/Landpage/Dashboard";
+import Home from "./components/Landpage/Home";
+import Navbar from "./Navbar/Navbar";
 
 
 export default function App() {
@@ -171,13 +175,22 @@ export default function App() {
       {/*-------------- not logged in---------------------- */}
       {!isLogin &&
         <div className="Navbar">
+           <Navbar />
+           <main className="page-content">
           <Routes>
             <Route path="/" element={<LandingPage />} />
 
             <Route path="/login" element={<Login />} />
 
             <Route path="/signup" element={<Signup />} />
+
+            <Route path="/about" element={<About/>} />
+
+            <Route path="/dashboard" element={<Dashboard/>} />
+
+            <Route path="/home" element={<Home/>} />
           </Routes>
+          </main>
         </div>
 
       }

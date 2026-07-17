@@ -1,0 +1,112 @@
+/* ===========================
+   ABOUT PAGE
+=========================== */
+
+.about-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+
+    background-color: #ffffff;
+}
+
+/* ===========================
+   CONTENT CARD
+=========================== */
+
+.about-content {
+    width: 900px;
+    padding: 40px;
+
+    background-color: #ffffff;
+    border: 2px solid #000;
+    border-radius: 12px;
+}
+
+/* ===========================
+   MAIN HEADING
+=========================== */
+
+.about-content h1 {
+    text-align: center;
+    font-size: 42px;
+    color: #000;
+    margin-bottom: 25px;
+}
+
+/* ===========================
+   INTRODUCTION
+=========================== */
+
+.about-intro {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+.about-section {
+    margin-bottom: 40px;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    color: #000;
+    margin-bottom: 15px;
+
+    border-left: 5px solid #000;
+    padding-left: 12px;
+}
+
+.about-section p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* ===========================
+   LIST
+=========================== */
+
+.about-section ul {
+    margin-left: 25px;
+}
+
+.about-section li {
+    font-size: 17px;
+    margin-bottom: 12px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .about-content {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .about-content h1 {
+        font-size: 34px;
+    }
+
+    .about-section h2 {
+        font-size: 24px;
+    }
+
+    .about-section p,
+    .about-section li,
+    .about-intro {
+        font-size: 16px;
+    }
+}

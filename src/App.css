@@ -1,195 +1,218 @@
-/* =========================
+/* ===================================
    GLOBAL
-========================= */
+=================================== */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
 }
 
 body {
-  background: #f4f7fb;
-  color: #075acd;
+    background: #ffffff;
+    color: #000;
 }
 
-/* =========================
+/* ===================================
+   APP LAYOUT
+=================================== */
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.page-content {
+    padding-top: 85px;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+
+.Navbar {
+    width: 100%;
+}
+
+/* ===================================
+   MAIN CONTENT
+=================================== */
+
+.main-content {
+    flex: 1;
+    width: 100%;
+    padding: 30px;
+}
+
+/* ===================================
    BOARD
-========================= */
+=================================== */
 
 .board {
-  display: flex;
-  gap: 16px;
-  padding: 20px;
-  overflow-x: auto;
-  height: 100vh;
-  align-items: flex-start;
+    display: flex;
+    gap: 24px;
+
+    padding: 20px;
+
+    width: 100%;
+
+    overflow-x: auto;
+    align-items: flex-start;
 }
 
-/* =========================
+/* Scrollbar */
+
+.board::-webkit-scrollbar {
+    height: 8px;
+}
+
+/* ===================================
    COLUMN
-========================= */
+=================================== */
 
 .column {
-  
-  background:;
-  
-  width: 280px;
-  min-height: 620px;
-  border-radius: 12px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: 0.2s ease;
-  border: 1px solid #e5e7eb;
+    width: 280px;
+    min-height: 620px;
+
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: 2px solid #000;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
 }
 
-/* highlight on drag over */
 .column-hover {
-  background: #f0f7ff;
-  border: 1px solid #60a5fa;
+    border: 2px solid #555;
 }
 
-/* =========================
+/* ===================================
    COLUMN TITLE
-========================= */
+=================================== */
 
 .column-title {
-  font-weight: 600;
-  font-size: 15px;
-  margin-bottom: 10px;
-  color: #1e3a8a;
-  padding: 6px 4px;
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+    color: #000;
 }
 
-/* =========================
+/* ===================================
    CARD
-========================= */
+=================================== */
 
 .card {
-   background: white;
-  border-radius: 12px;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  cursor: grab;
-  transition: all 0.2s ease;
+    background: #ffffff;
+
+    border: 1px solid #000;
+    border-radius: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 12px;
+
+    transition: 0.2s;
+    cursor: grab;
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  border-color: #60a5fa;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 .card:active {
-  cursor: grabbing;
-  opacity: 0.7;
+    cursor: grabbing;
 }
 
-/* =========================
+/* ===================================
    BUTTONS
-========================= */
+=================================== */
 
 .edit-btn,
 .delete-btn {
-  margin-left: 6px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 14px;
-  color: #6b7280;
-  transition: 0.2s;
+
+    margin-left: 8px;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    color: #000;
 }
 
-.edit-btn:hover {
-  color: #2563eb;
-  transform: scale(1.2);
-}
-
+.edit-btn:hover,
 .delete-btn:hover {
-  color: #ef4444;
-  transform: scale(1.2);
+    transform: scale(1.1);
 }
 
-/* =========================
+/* ===================================
    INPUT AREA
-========================= */
+=================================== */
 
 .column-input-area {
-  margin-top: auto;
-  display: flex;
-  gap: 6px;
-  padding-top: 10px;
+
+    display: flex;
+    gap: 10px;
+
+    margin-top: auto;
+    padding-top: 15px;
 }
 
 .column-input {
-  flex: 1;
-  height: 48px;
-  padding: 7px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  outline: none;
+
+    flex: 1;
+
+    height: 45px;
+
+    padding: 10px;
+
+    border: 1px solid #000;
+    border-radius: 8px;
+
+    outline: none;
 }
 
 .column-input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+    border: 2px solid #000;
 }
 
 .column-button {
-    height: 48px;
-  padding: 0 20px;
-  border: none;
-  border-radius: 8px;
-  background: #2563eb;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s;
+
+    padding: 0 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #000;
+    color: #fff;
+
+    cursor: pointer;
 }
 
 .column-button:hover {
-  background: #1d4ed8;
-  transform: scale(1.05);
+    background: #333;
 }
 
-/* =========================
-   SCROLLBAR
-========================= */
+/* ===================================
+   HEADINGS
+=================================== */
 
-.board::-webkit-scrollbar {
-  height: 8px;
-}
-
-.board {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  overflow-x: auto;
-}
-
-.app {
-  display: flex;
-  min-height: 100vh;
-  background: #f8fafc;
-}
-
-.app-title {
-  font-size: 42px;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 30px;
-}
-
-.main-content {
-  flex: 1;
-  padding: 30px;
-  overflow: hidden;
-}
-
-h1,h2{
-  color:blue;
+h1,
+h2,
+h3 {
+    color:  #2563eb;
 }
