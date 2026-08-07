@@ -42,7 +42,7 @@ export default function Column({ column, addCard, deleteCard, editCard,moveCard 
         card={card} 
         deleteCard={deleteCard} 
         columnId={column.id}
-         editCard={editCard} />
+        editCard={editCard} />
       ))}
       </div>
       

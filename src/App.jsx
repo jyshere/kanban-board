@@ -16,7 +16,7 @@ import Navbar from "./Navbar/Navbar";
 export default function App() {
   const [boards, setBoards] = useState(initialBoards);
   const [selectedBoardId, setSelectedBoardId] = useState(null)
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   const currentBoard = boards.find((b) => (b.id === selectedBoardId));
 
@@ -49,7 +49,7 @@ export default function App() {
 
 
   }
-
+{/*--------------add card---------------------- */}
   const addCard = (columnId, title) => {
     const newCard = {
       id: Date.now().toString(),
@@ -71,7 +71,7 @@ export default function App() {
 
     setBoards(updatedBoards);
   };
-
+{/*--------------delete card---------------------- */}
   const deleteCard = (columnId, cardId) => {
     const updatedBoards = boards.map(board => {
       if (board.id !== selectedBoardId) return board;
@@ -94,7 +94,7 @@ export default function App() {
     setBoards(updatedBoards);
   };
 
-
+{/*--------------edit card---------------------- */}
   const editCard = (columnId, cardId, newTitle) => {
     const updatedBoards = boards.map(board => {
       if (board.id !== selectedBoardId) return board;
@@ -122,10 +122,7 @@ export default function App() {
     setBoards(updatedBoards);
   };
 
-
-
-
-
+{/*-------------- move card---------------------- */}
   const moveCard = (cardId, sourceColumnId, destinationColumnId) => {
     const sourceColumn = currentBoard.columns.find(
       col => col.id === sourceColumnId
@@ -169,27 +166,47 @@ export default function App() {
     setBoards(updatedBoards);
   };
 
+  {/*--------------Add column---------------------- */}
+
+  const addColumn=(title)=>{
+    const updatedBoards = boards.map(board => {
+      if (board.id !== selectedBoardId) return board;
+
+
+      const newColumn = {
+    id:Date.now().toString(),
+    title: title,
+    cards: []
+}
+      return {
+       ...board,
+       columns:[...board.columns,newColumn]
+      };
+ 
+    });
+    setBoards(updatedBoards);
+  }
 
   return (
     <div className="app">
       {/*-------------- not logged in---------------------- */}
       {!isLogin &&
         <div className="Navbar">
-           <Navbar />
-           <main className="page-content">
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
+          <Navbar />
+          <main className="page-content">
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
 
-            <Route path="/login" element={<Login />} />
+              <Route path="/login" element={<Login />} />
 
-            <Route path="/signup" element={<Signup />} />
+              <Route path="/signup" element={<Signup />} />
 
-            <Route path="/about" element={<About/>} />
+              <Route path="/about" element={<About />} />
 
-            <Route path="/dashboard" element={<Dashboard/>} />
+              <Route path="/dashboard" element={<Dashboard />} />
 
-            <Route path="/home" element={<Home/>} />
-          </Routes>
+              <Route path="/home" element={<Home />} />
+            </Routes>
           </main>
         </div>
 
@@ -220,6 +237,7 @@ export default function App() {
                   deleteCard={deleteCard}
                   editCard={editCard}
                   moveCard={moveCard}
+                  addColumn={addColumn}
                 />
               </>
             )}
@@ -228,10 +246,6 @@ export default function App() {
 
         </>
       }
-
-
-
-
 
     </div>
   );

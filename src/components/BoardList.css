@@ -92,3 +92,20 @@
   background: #d1d5db;
   border-radius: 10px;
 }
+
+.Board-input-area {
+  min-width: 280px;
+  width: 280px;
+  height: 620px;
+
+  flex-shrink: 0;
+
+  border: 2px dashed #000;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}

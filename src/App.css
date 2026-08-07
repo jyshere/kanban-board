@@ -26,9 +26,10 @@ body {
 =================================== */
 
 .app {
-    width: 100%;
-    min-height: 100vh;
-    background: #ffffff;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
 }
 
 .page-content {
@@ -48,9 +49,9 @@ body {
 =================================== */
 
 .main-content {
-    flex: 1;
-    width: 100%;
-    padding: 30px;
+  flex: 1;
+  min-width: 0;
+  padding: 30px;
 }
 
 /* ===================================
@@ -58,15 +59,16 @@ body {
 =================================== */
 
 .board {
-    display: flex;
-    gap: 24px;
+  display: flex;
+  gap: 24px;
 
-    padding: 20px;
+  width: 100%;
+  padding: 20px;
 
-    width: 100%;
+  align-items: flex-start;
 
-    overflow-x: auto;
-    align-items: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 /* Scrollbar */
@@ -80,18 +82,17 @@ body {
 =================================== */
 
 .column {
-    width: 280px;
-    min-height: 620px;
+  width: 280px;
+  min-width: 280px;
+  min-height: 620px;
 
-    padding: 15px;
+  border-radius: 12px;
+  padding: 12px;
 
-    background: #ffffff;
+  display: flex;
+  flex-direction: column;
 
-    border: 2px solid #000;
-    border-radius: 12px;
-
-    display: flex;
-    flex-direction: column;
+  border: 1px solid #000;
 }
 
 .column-hover {
@@ -215,4 +216,11 @@ h1,
 h2,
 h3 {
     color:  #2563eb;
+}
+.sidebar {
+  width: 315px;
+  min-width: 315px;
+  height: 100vh;
+  border-right: 1px solid #000;
+  background: #fff;
 }
