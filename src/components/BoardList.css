@@ -3,7 +3,7 @@
 ========================= */
 
 .board-list-container {
-  width: 240px;
+  width: 270px;
   min-height: 100vh;
   background: #ffffff;
   border-right: 1px solid #e5e7eb;
@@ -100,12 +100,20 @@
 
   flex-shrink: 0;
 
-  border: 2px dashed #000;
+  border: 1px solid #000;
   border-radius: 12px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  
+  justify-content: center; 
 
   gap: 8px;
 }
+
+.add-column{
+  border: 1px solid #000;
+  color:black;
+  background: white; 
+  padding:3px;
+  
+}
+

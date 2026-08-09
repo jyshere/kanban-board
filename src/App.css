@@ -60,7 +60,7 @@ body {
 
 .board {
   display: flex;
-  gap: 24px;
+  gap: 14px;
 
   width: 100%;
   padding: 20px;
@@ -92,7 +92,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  border: 1px solid #000;
+  border: 1px solid #080707;
 }
 
 .column-hover {
@@ -110,6 +110,7 @@ body {
     margin-bottom: 15px;
 
     color: #000;
+    white-space: pre-wrap;
 }
 
 /* ===================================
@@ -216,11 +217,4 @@ h1,
 h2,
 h3 {
     color:  #2563eb;
-}
-.sidebar {
-  width: 315px;
-  min-width: 315px;
-  height: 100vh;
-  border-right: 1px solid #000;
-  background: #fff;
 }

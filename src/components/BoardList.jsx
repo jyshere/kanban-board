@@ -17,11 +17,10 @@ export default function BoardList({
         {boards.map(board => (
           <button
             key={board.id}
-            className={`board-item ${
-              selectedBoardId === board.id
+            className={`board-item ${selectedBoardId === board.id
                 ? "active"
                 : ""
-            }`}
+              }`}
             onClick={() =>
               setSelectedBoardId(board.id)
             }

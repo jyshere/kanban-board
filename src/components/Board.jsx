@@ -1,14 +1,19 @@
 import { useState } from "react";
 import Column from "./Column";
 
-export default function Board({ board ,addCard, deleteCard,editCard,moveCard,addColumn}) {
+export default function Board({ board ,addCard, deleteCard,editCard,moveCard,addColumn,renameColumnTitle,deleteColumn}) {
   const[title,setTitle]=useState("");
-  const handleAdd = () => {
-    if (!text.trim()) return;
+  
+ const handleAdd = () => {
+    const cleanedTitle = title.trim();
 
-    addColumn( title.trim());
+    if (!cleanedTitle) return;
+
+    addColumn(cleanedTitle);
     setTitle("");
-  };
+};
+
+
 
   return (
     <div className="board">
@@ -19,7 +24,10 @@ export default function Board({ board ,addCard, deleteCard,editCard,moveCard,add
         addCard={addCard} 
         deleteCard={deleteCard} 
         editCard={editCard}
-        moveCard={moveCard}/>
+        moveCard={moveCard}
+        renameColumnTitle={renameColumnTitle}
+        deleteColumn={deleteColumn}
+        />
       ))}
       
       {/* -------------new Column button---------- */}

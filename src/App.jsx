@@ -166,7 +166,7 @@ export default function App() {
     setBoards(updatedBoards);
   };
 
-  {/*--------------Add column---------------------- */}
+  // /*--------------Add column---------------------- */
 
   const addColumn=(title)=>{
     const updatedBoards = boards.map(board => {
@@ -187,6 +187,41 @@ export default function App() {
     setBoards(updatedBoards);
   }
 
+  // -----------------------rename column titile-----------------
+
+  const renameColumnTitle=(columnId,newTitle)=>{
+    const updatedBoards = boards.map(board => {
+    if (board.id !== selectedBoardId) return board;
+    return{
+      ...board,
+      columns:board.columns.map(col=>
+      col.id===columnId?
+      {
+        ...col,
+        title:newTitle
+      }:
+      col
+    
+    )
+    }
+  })
+    setBoards(updatedBoards);
+  }
+
+
+  // =====================delete Column=================
+
+  const  deleteColumn=(columnId)=>{
+    const updatedBoards = boards.map(board => {
+    if (board.id !== selectedBoardId) return board;
+    return{
+      ...board,
+      columns: board.columns.filter(col => col.id !== columnId)
+      
+  }})
+    setBoards(updatedBoards);
+
+  }
   return (
     <div className="app">
       {/*-------------- not logged in---------------------- */}
@@ -238,6 +273,8 @@ export default function App() {
                   editCard={editCard}
                   moveCard={moveCard}
                   addColumn={addColumn}
+                  renameColumnTitle={renameColumnTitle}
+                  deleteColumn={deleteColumn}
                 />
               </>
             )}
