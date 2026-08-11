@@ -1,0 +1,30 @@
+.card-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.card-priority {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-priority-bg-high {
+  background: #C4453CA3;
+}
+
+.card-priority-bg-medium {
+  background: #C3D043C4;
+}
+
+.card-priority-bg-low {
+  background: #94CC55C2;
+}
+
+.card-due-date {
+  font-size: 12px;
+  color: #666;
+}

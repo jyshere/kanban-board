@@ -6,7 +6,12 @@ const initialBoards = [{
       id: "col-1",
       title: "To Do",
       cards: [
-        { id: "c1", title: "Learn React" ,description:""}
+        { id: "c1",
+          title: "Learn React",
+          description: "React,hooks",
+          priority: "medium",
+          dueDate: ""
+        }
       ]
     },
     {

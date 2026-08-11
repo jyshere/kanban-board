@@ -1,119 +1,64 @@
-/* =========================
-   SIDEBAR
-========================= */
-
 .board-list-container {
-  width: 270px;
-  min-height: 100vh;
-  background: #ffffff;
-  border-right: 1px solid #e5e7eb;
-  padding: 24px 16px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: #fff;
+  border-right: 2px solid #000;
+  height: 100%;
+  width: fit-content;
 }
 
 .board-list-title {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
-  color: #6b7280;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
+  color: #6366f1;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
-/* =========================
-   BOARD BUTTONS
-========================= */
+.board-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
 .board-item {
-  width: 100%;
-  border: none;
-  background: transparent;
-  padding: 14px 16px;
-  margin-bottom: 8px;
-  border-radius: 10px;
-  text-align: left;
-  font-size: 16px;
-  font-weight: 500;
+  padding: 8px 12px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 6px;
   cursor: pointer;
-  color: #374151;
-  transition: all 0.2s ease;
+  font-size: 14px;
+  text-align: left;
+  width: fit-content;
 }
 
 .board-item:hover {
-  background: #f3f4f6;
+  background: #000;
+  color: #fff;
 }
-
-/* Selected Board */
 
 .board-item.active {
-  background: #eef2ff;
-  color: #4f46e5;
-  font-weight: 600;
-  border-left: 4px solid #4f46e5;
+  background: #000;
+  color: #fff;
 }
 
-/* =========================
-   CREATE BOARD BUTTON
-========================= */
-
 .create-board-btn {
-  margin-top: 16px;
-  width: 100%;
-  padding: 14px;
-  border: 2px dashed #6366f1;
-  border-radius: 12px;
-  background: transparent;
-  color: #6366f1;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 8px 12px;
+  background: #fff;
+  color: #000;
+  border: 2px dashed #000;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s ease;
+  font-size: 14px;
+  font-weight: 600;
+  width: fit-content;
 }
 
 .create-board-btn:hover {
-  background: #eef2ff;
+  background: #000;
+  color: #fff;
 }
-
-/* =========================
-   SCROLL IF MANY BOARDS
-========================= */
-
-.board-items {
-  flex: 1;
-  overflow-y: auto;
-}
-
-.board-items::-webkit-scrollbar {
-  width: 6px;
-}
-
-.board-items::-webkit-scrollbar-thumb {
-  background: #d1d5db;
-  border-radius: 10px;
-}
-
-.Board-input-area {
-  min-width: 280px;
-  width: 280px;
-  height: 620px;
-
-  flex-shrink: 0;
-
-  border: 1px solid #000;
-  border-radius: 12px;
-
-  
-  justify-content: center; 
-
-  gap: 8px;
-}
-
-.add-column{
-  border: 1px solid #000;
-  color:black;
-  background: white; 
-  padding:3px;
-  
-}
-

@@ -50,11 +50,14 @@ export default function App() {
 
   }
 {/*--------------add card---------------------- */}
-  const addCard = (columnId, title) => {
-    const newCard = {
-      id: Date.now().toString(),
-      title
-    };
+  const addCard = (columnId, title, description, priority, dueDate) => {
+     const newCard = {
+    id: Date.now().toString(),
+    title:title,
+    description,
+    priority,
+    dueDate
+  };
 
     const updatedBoards = boards.map(board => {
       if (board.id !== selectedBoardId) return board;

@@ -1,4 +1,4 @@
-
+import "./Card.css";
 export default function Card({ card, deleteCard, columnId, editCard }) {
   const handleDragStart = (e) => {
 
@@ -10,9 +10,21 @@ export default function Card({ card, deleteCard, columnId, editCard }) {
   const handleDragEnd = (e) => {
     e.currentTarget.style.opacity = "1";
   };
-  return <div className="card" draggable
-    onDragStart={handleDragStart}>
-    {card.title}
+  return <div className={`card card-priority-bg-${card.priority?.toLowerCase()}`} draggable onDragStart={handleDragStart}>
+    <div>
+      <h3>{card.title}</h3>
+      <p>{card.description}</p>
+      <div className="card-details">
+        <span className={`card-priority priority-${card.priority?.toLowerCase()}`}>
+          {card.priority}
+        </span>
+        {card.dueDate && (
+          <span className="card-due-date">
+            Due: {card.dueDate}
+          </span>
+        )}
+      </div>
+    </div>
 
 
     <button

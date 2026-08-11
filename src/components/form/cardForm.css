@@ -1,0 +1,77 @@
+.card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  background: #f5f5f5;
+  border: 2px solid #000;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+.title-required{
+    display:flex;
+    gap: 5px;
+}
+
+.required {
+  color: red;
+  font-size: 16px;
+}
+
+.card-form-input,
+.card-form-textarea,
+.card-form-select,
+.card-form-date {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #fff;
+  color: #000;
+}
+
+.card-form-textarea {
+  resize: vertical;
+}
+
+.card-form-select,
+.card-form-date {
+  cursor: pointer;
+}
+
+.card-form-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.card-form-add,
+.card-form-cancel {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+}
+
+.card-form-add {
+  border: 1px solid #4caf50;
+}
+
+.card-form-add:hover {
+  background: #4caf50;
+  color: #fff;
+}
+
+.card-form-cancel {
+  border: 1px solid #999;
+}
+
+.card-form-cancel:hover {
+  background: #999;
+  color: #fff;
+}

@@ -1,0 +1,73 @@
+/* Column Container */
+.column {
+  min-width: 250px;
+  max-width: 300px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Column Title */
+.column-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ccc;
+  cursor: default;
+}
+
+/* Column Title Input (when editing) */
+.column-title-input {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 4px 8px;
+  outline: none;
+  width: 100%;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 6px;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Add Card Button */
+.column-button {
+  width: 100%;
+  padding: 8px;
+  background: #fff;
+  color: #000;
+  border: 2px dashed #000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.column-button:hover {
+  background: #000;
+  color: #fff;
+}
