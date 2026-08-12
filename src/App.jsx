@@ -4,13 +4,13 @@ import initialBoards from "./data/initialBoards";
 import Board from "./components/Board";
 import BoardList from "./components/BoardList";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LandingPage from "./components/Landpage/LandingPage";
-import Login from "./components/Landpage/Login";
-import Signup from "./components/Landpage/Signup";
-import About from "./components/Landpage/About";
-import Dashboard from "./components/Landpage/Dashboard";
-import Home from "./components/Landpage/Home";
-import Navbar from "./Navbar/Navbar";
+
+import Login from "./Landpage/Login-signup/Login";
+import Signup from "./Landpage/Login-signup/Signup";
+
+import Dashboard from "./Landpage/Pages/Dashboard";
+import Home from "./Landpage/Pages/Home";
+import Navbar from "./Landpage/Pages/Navbar";
 
 
 export default function App() {
@@ -98,7 +98,7 @@ export default function App() {
   };
 
 {/*--------------edit card---------------------- */}
-  const editCard = (columnId, cardId, newTitle) => {
+  const editCard = (columnId, cardId, updatedData) => {
     const updatedBoards = boards.map(board => {
       if (board.id !== selectedBoardId) return board;
 
@@ -112,7 +112,7 @@ export default function App() {
                 card.id === cardId
                   ? {
                     ...card,
-                    title: newTitle
+                    updatedData
                   }
                   : card
               )

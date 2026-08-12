@@ -1,5 +1,5 @@
 import Card from "./Card";
-import CardForm from "./form/cardForm";
+import CardForm from "../form/CardForm";
 import { useState, useCallback } from "react";
 import "./Column.css";
 

@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from "react";
-import "./cardForm.css";
-export default function CardForm({ onSubmit, onClose }) {
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [priority, setPriority] = useState("Medium");
-    const [dueDate, setDueDate] = useState("");
-    const formRef = useRef(null);
+import "./CardForm.css";
+export default function CardForm({ initialData,onSubmit, onClose }) {
+const [title, setTitle] = useState(initialData?.title || "");
+  const [description, setDescription] = useState(initialData?.description || "");
+  const [priority, setPriority] = useState(initialData?.priority || "Medium");
+  const [dueDate, setDueDate] = useState(initialData?.dueDate || "");
+  const formRef = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (e) => {
@@ -59,7 +59,7 @@ export default function CardForm({ onSubmit, onClose }) {
                 onChange={(e) => setDueDate(e.target.value)}
             />
             <div className="card-form-actions">
-                <button className="card-form-add" onClick={handleSubmit}>Add</button>
+                <button className="card-form-add" onClick={handleSubmit}>Save</button>
                 <button className="card-form-cancel" onClick={onClose}>Cancel</button>
             </div>
         </div>
