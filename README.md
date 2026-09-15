@@ -1,16 +1,138 @@
-# React + Vite
+Kanban Board
+A flexible full-stack workflow management application built around the Kanban methodology. It can be used to manage software projects, daily work, job applications, study plans, and personal goals through customizable boards, columns, and cards.
+----------------------------------------*---------------------------------------
+📌 Problem Statement
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Managing different types of work often requires tracking multiple items through different stages. A software task may move from To Do → Development → Testing → Done, while a job application may move through Applied → Assessment → Interview → Offer.
 
-Currently, two official plugins are available:
+This project provides a customizable workflow system where users define their own boards and stages based on what they need to manage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+  Example Use Cases
+  Software Development
+  Backlog → To Do → Development → Testing → Done
+---------------------------------------------*--------------------------
+✨ Features
+📋 Boards
+  Create, switch & delete boards
+  Customize boards for different workflows
+🗂️ Columns
+  Create, rename & delete columns
+  Define custom workflow stages
+📝 Cards
+  Create, edit & delete cards
+  Add title, description & priority
+  Set priority: Low / Medium / High
+🔄 Drag & Drop
+  Move cards between columns
+  Track task progress visually
+👤 Authentication
+  User signup & login
+  Password hashing
+  JWT-based authentication
+-----------------------------------------*--------------------------------------
+  🛠️ Tech Stack
+  Layer	---------------------------------------------Technologies
+  Frontend	----------------------------------React, JavaScript, Vite, React Router, CSS
+  Backend	------------------------------------Node.js, Express.js, MongoDB, Mongoose, REST APIs
+  Authentication	----------------------------JWT, bcrypt
+  Tools	--------------------------------------Git, GitHub, VS Code, Postman
+  Database	----------------------------------MongoDB Atlas
+----------------------------------------------------*-------------------------------------
+🏗️ Architecture
+  The project follows a client-server architecture:
+  System Architecture
+                    ┌──────────────────────┐
+                    │        USER          │
+                    │  Create / Edit /     │
+                    │  Move Tasks          │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                ┌────────────────────────────┐
+                │        FRONTEND            │
+                │          React             │
+                │                            │
+                │  Pages • Components • UI   │
+                │       State Management     │
+                └────────────┬───────────────┘
+                             │
+                      HTTP / REST API
+                             │
+                             ▼
+              ┌────────────────────────────┐
+              │         BACKEND            │
+              │      Node + Express        │
+              │                            │
+              │  Routes • Authentication   │
+              │  Business Logic • APIs     │
+              └────────────┬───────────────┘
+                           │
+                        Mongoose
+                           │
+                           ▼
+              ┌────────────────────────────┐
+              │         DATABASE           │
+              │          MongoDB           │
+              │                            │
+              │  Users • Boards • Columns  │
+              │          • Cards           │
+              └────────────────────────────┘
+---------------------------------------------------*----------------------------------
+Data Flow
+  User Action
+      ↓
+  React Frontend
+      ↓
+  REST API Request
+      ↓
+  Express Backend
+      ↓
+  Business Logic / Validation
+      ↓
+  MongoDB
+      ↓
+  API Response
+      ↓
+  React UI Update
+  --------------------------------------------*---------------------------------
+📁 Project Structure
+  kanban-board/
+  │
+  ├── frontend/
+  │   ├── src/
+  │   │   ├── components/
+  │   │   ├── pages/
+  │   │   ├── Landpage/
+  │   │   ├── App.jsx
+  │   │   └── main.jsx
+  │   │
+  │   ├── package.json
+  │   └── ...
+  │
+  ├── backend/
+  │   ├── routes/
+  │   ├── controllers/
+  │   ├── models/
+  │   ├── middleware/
+  │   ├── server.js
+  │   ├── package.json
+  │   └── .gitignore
+  │
+  ├── .gitignore
+  └── README.md
+  --------------------------------------*---------------------------------------
+🔮 Future Improvements
+  Complete backend CRUD for boards
+  Complete backend CRUD for columns
+  Complete backend CRUD for cards
+  Connect frontend state with backend APIs
+  Persist drag-and-drop changes
+  User-specific boards and cards
+  Protected API routes
+  Due dates
+  Labels / tags
+  Card details modal
+  Better form validation
+  Centralized error handling
+  AI-assisted workflow features
+  Deployment
