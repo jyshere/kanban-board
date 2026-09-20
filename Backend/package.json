@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- 
+  "type":"module",
   "scripts": {
-    "dev": "Server.js"
+    "dev": "node Server.js"
   },
   "keywords": [],
   "author": "",
@@ -16,10 +16,12 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "ioredis": "^6.0.0",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.10.0"
   },
   "devDependencies": {
+    "nodemailer": "^10.0.10",
     "nodemon": "^3.1.14"
   }
 }

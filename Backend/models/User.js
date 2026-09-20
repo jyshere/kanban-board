@@ -1,28 +1,24 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
-    {
-        name: {
-            type: String,
-            required: true,
-        },
-
-        email: {
-            type: String,
-            required: true,
-            unique: true,//ensure that only one user is created even if the two request are sent at the same time
-        },
-
-        password: {
-            type: String,
-            required: true,
-        },
+  {
+    name: {
+      type: String,
+      default: "",
     },
-    {
-        timestamps: true,
-    }
+
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
 );
 
 const User = mongoose.model("User", userSchema);
 
-module.exports = User;
+export default User;
