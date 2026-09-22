@@ -1,0 +1,123 @@
+/* =========================
+   Board Container
+   ========================= */
+
+.board {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding-bottom: 20px;
+}
+
+
+/* =========================
+   Add Column Area
+   ========================= */
+
+.add-column-area {
+  flex: 0 0 280px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px;
+
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   Input
+   ========================= */
+
+.add-column-input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 38px;
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  font-family: inherit;
+  font-size: 14px;
+  color: #0f172a;
+
+  outline: none;
+}
+
+.add-column-input::placeholder {
+  color: #94a3b8;
+}
+
+.add-column-input:focus {
+  border-color: #64748b;
+}
+
+
+/* =========================
+   Add Button
+   ========================= */
+
+.add-column-button {
+  height: 38px;
+
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #0f172a;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.add-column-button:hover {
+  background: #1e293b;
+}
+
+
+/* =========================
+   Scrollbar
+   ========================= */
+
+.board::-webkit-scrollbar {
+  height: 8px;
+}
+
+.board::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.board::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.board::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

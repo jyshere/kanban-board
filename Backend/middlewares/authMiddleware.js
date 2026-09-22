@@ -5,7 +5,7 @@ import { isTokenBlacklisted } from "../services/redisServices.js";
 const authMiddleware= async(req,res,next)=>{
     try{
         const token= req.cookies.token;
-        if(!token)return res.status(401),json({message:"Not authenticated"});
+        if(!token)return res.status(401).json({message:"Not authenticated"});
 
         if(await isTokenBlacklisted(token))return res.status(401).json({message:"Token invalid"});
 

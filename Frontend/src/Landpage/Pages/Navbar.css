@@ -1,39 +1,310 @@
-nav{
-    position: fixed;
-    top: 0;
-    left: 0;
+/* =====================================
+   NAVBAR
+===================================== */
 
-    width: 100%;
+.navbar {
+  height: 76px;
+  width: 100%;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    padding: 20px 40px;
+  padding: 0 4%;
 
-    background: white;
-    
+  box-sizing: border-box;
 
-    z-index: 1000;
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
 }
 
-nav h2{
-    font-size: 28px;
-    font-weight: bold;
+
+/* =====================================
+   LOGO
+===================================== */
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  text-decoration: none;
+
+  color: #111827;
 }
 
-.links{
-    display: flex;
-    gap: 30px;
+
+/* Small logo icon */
+
+.nav-logo-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 5px;
+
+  background: #111827;
+  color: #ffffff;
+
+  font-size: 12px;
+  letter-spacing: -3px;
+
+  padding-right: 3px;
+
+  box-sizing: border-box;
 }
 
-.links a{
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
+
+/* Logo text */
+
+.nav-logo-text {
+  font-size: 23px;
+  font-weight: 700;
+
+  letter-spacing: -0.7px;
+
+  color: #111827;
 }
 
-.links a:hover{
-    color: blue;
-    text-decoration: underline;
+
+/* =====================================
+   NAVIGATION LINKS
+===================================== */
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+
+/* Individual links */
+
+.nav-link {
+  position: relative;
+
+  padding: 28px 0;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  color: #64748b;
+
+  transition: color 0.2s ease;
+}
+
+
+/* Hover */
+
+.nav-link:hover {
+  color: #111827;
+}
+
+
+/* Active link */
+
+.nav-link.active {
+  color: #111827;
+}
+
+
+/* Active underline */
+
+.nav-link.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 10px;
+
+  height: 2px;
+
+  background: #111827;
+
+  border-radius: 2px;
+}
+
+
+/* =====================================
+   USER EMAIL
+===================================== */
+
+.nav-user {
+  font-size: 14px;
+  color: #64748b;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================
+   LOGOUT BUTTON
+===================================== */
+
+.nav-btn {
+  border: none;
+  background: transparent;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  color: #64748b;
+
+  cursor: pointer;
+
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  color: #111827;
+}
+
+
+.logout-btn {
+  padding: 8px 0;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 800px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .links {
+    gap: 22px;
+  }
+
+  .nav-logo-text {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .navbar {
+    height: auto;
+    min-height: 70px;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 15px 20px;
+  }
+
+  .links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 5px 0;
+  }
+
+  .nav-link.active::after {
+    bottom: -3px;
+  }
+
+}
+
+/* =====================================
+   PROFILE
+===================================== */
+
+.profile-container {
+  position: relative;
+}
+
+
+/* Profile button */
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 0;
+
+  border: none;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+
+  color: #64748b;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.profile-btn:hover {
+  color: #111827;
+}
+
+
+/* Arrow */
+
+.profile-arrow {
+  font-size: 12px;
+  line-height: 1;
+}
+
+
+/* =====================================
+   PROFILE DROPDOWN
+===================================== */
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+
+  min-width: 200px;
+  padding: 14px 16px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  z-index: 100;
+}
+
+.profile-email {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #111827;
+
+  word-break: break-word;
 }

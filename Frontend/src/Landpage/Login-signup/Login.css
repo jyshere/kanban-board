@@ -114,3 +114,11 @@
 .login-card a:hover {
     text-decoration: underline;
 }
+.login-card .login-back-btn {
+    margin-top: 12px;
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.login-card .login-back-btn:hover { background: #f3f4f6; color: #000; }
+.login-error { color: #dc2626; font-size: 14px; margin: -8px 0 16px; text-align: center; }

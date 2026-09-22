@@ -3,23 +3,24 @@
 =================================== */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 html,
 body,
 #root {
-    width: 100%;
-    min-height: 100%;
+  width: 100%;
+  min-height: 100%;
 }
 
 body {
-    background: #ffffff;
-    color: #000;
+  background: #ffffff;
+  color: #000;
 }
+
 
 /* ===================================
    APP LAYOUT
@@ -27,32 +28,44 @@ body {
 
 .app {
   display: flex;
+  flex-direction: column;
+
   width: 100%;
   min-height: 100vh;
-  background: #fff;
+
+  background: #ffffff;
 }
 
+
+/* Main content should appear BELOW navbar */
+
 .page-content {
-    padding-top: 85px;
+  width: 100%;
+  flex: 1;
+  padding: 0;
 }
+
 
 /* ===================================
    NAVBAR
 =================================== */
 
 .Navbar {
-    width: 100%;
+  width: 100%;
 }
+
 
 /* ===================================
    MAIN CONTENT
 =================================== */
 
 .main-content {
+  width: 100%;
   flex: 1;
   min-width: 0;
   padding: 30px;
 }
+
 
 /* ===================================
    BOARD
@@ -71,11 +84,13 @@ body {
   overflow-y: hidden;
 }
 
+
 /* Scrollbar */
 
 .board::-webkit-scrollbar {
-    height: 8px;
+  height: 8px;
 }
+
 
 /* ===================================
    COLUMN
@@ -96,48 +111,51 @@ body {
 }
 
 .column-hover {
-    border: 2px solid #555;
+  border: 2px solid #555;
 }
+
 
 /* ===================================
    COLUMN TITLE
 =================================== */
 
 .column-title {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 
-    color: #000;
-    white-space: pre-wrap;
+  color: #000;
+  white-space: pre-wrap;
 }
+
 
 /* ===================================
    CARD
 =================================== */
 
 .card {
-    background: #ffffff;
+  background: #ffffff;
 
-    border: 1px solid #000;
-    border-radius: 10px;
+  border: 1px solid #000;
+  border-radius: 10px;
 
-    padding: 12px;
+  padding: 12px;
 
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 
-    transition: 0.2s;
-    cursor: grab;
+  transition: 0.2s;
+  cursor: grab;
 }
 
 .card:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .card:active {
-    cursor: grabbing;
+  cursor: grabbing;
 }
+
 
 /* ===================================
    BUTTONS
@@ -145,76 +163,74 @@ body {
 
 .edit-btn,
 .delete-btn {
+  margin-left: 8px;
 
-    margin-left: 8px;
+  background: none;
+  border: none;
 
-    background: none;
-    border: none;
+  cursor: pointer;
 
-    cursor: pointer;
-
-    color: #000;
+  color: #000;
 }
 
 .edit-btn:hover,
 .delete-btn:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
+
 
 /* ===================================
    INPUT AREA
 =================================== */
 
 .column-input-area {
+  display: flex;
+  gap: 10px;
 
-    display: flex;
-    gap: 10px;
-
-    margin-top: auto;
-    padding-top: 15px;
+  margin-top: auto;
+  padding-top: 15px;
 }
 
 .column-input {
+  flex: 1;
 
-    flex: 1;
+  height: 45px;
 
-    height: 45px;
+  padding: 10px;
 
-    padding: 10px;
+  border: 1px solid #000;
+  border-radius: 8px;
 
-    border: 1px solid #000;
-    border-radius: 8px;
-
-    outline: none;
+  outline: none;
 }
 
 .column-input:focus {
-    border: 2px solid #000;
+  border: 2px solid #000;
 }
 
 .column-button {
+  padding: 0 18px;
 
-    padding: 0 18px;
+  border: none;
+  border-radius: 8px;
 
-    border: none;
-    border-radius: 8px;
+  background: #000;
+  color: #fff;
 
-    background: #000;
-    color: #fff;
-
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .column-button:hover {
-    background: #333;
+  background: #333;
 }
 
+
 /* ===================================
-   HEADINGS
+   GLOBAL HEADINGS
 =================================== */
 
 h1,
 h2,
 h3 {
-    color:  #2563eb;
+  color: #2563eb;
 }

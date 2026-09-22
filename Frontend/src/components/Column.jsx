@@ -19,22 +19,17 @@ export default function Column({ column, addCard, deleteCard, editCard, moveCard
   };
 
   const handleDrop = (e) => {
-    console.log("DROP HAPPENED");
-    const cardId = e.dataTransfer.getData("cardId");
-    const sourceColumnId = e.dataTransfer.getData("sourceColumnId");
-    console.log("DROP DATA:", {
-      cardId,
-      sourceColumnId,
-      destinationColumnId: column.id
-    });
+  const cardId = e.dataTransfer.getData("cardId");
+  const sourceColumnId = e.dataTransfer.getData("sourceColumnId");
 
-    moveCard(cardId, sourceColumnId, column.id);
-  };
+  moveCard(cardId, sourceColumnId, column.id);
+};
 
-  const handleDragOver = (e) => {
-    e.preventDefault();
-    console.log("DRAG OVER COLUMN:", column.id);
-  };
+const handleDragOver = (e) => {
+  e.preventDefault();
+};
+
+  
 
   const handleDoubleClick = (e) => {
     setEditingColumnId(column.id);

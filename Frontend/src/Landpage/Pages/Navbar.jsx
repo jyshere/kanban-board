@@ -1,24 +1,90 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 import "./Navbar.css";
 
-export default function Navbar() {
+export default function Navbar({ isLogin, user, onLogout }) {
+    const [showProfile, setShowProfile] = useState(false);
+
     return (
-        <nav>
+        <nav className="navbar">
 
-            <h2>KanbanBoard</h2>
+            {/* Logo */}
+            <Link to="/" className="nav-logo">
+                <span className="nav-logo-icon">
+                    ▮▮▮
+                </span>
 
+                <span className="nav-logo-text">
+                    KanbanBoard
+                </span>
+            </Link>
+
+
+            {/* Navigation */}
             <div className="links">
 
-                <Link to="/">Home</Link>
+                {/* Home */}
+                <NavLink
+                    to="/"
+                    end
+                    className={({ isActive }) =>
+                        isActive ? "nav-link active" : "nav-link"
+                    }
+                >
+                    Home
+                </NavLink>
 
-                <Link to="/dashboard">Dashboard</Link>
 
-                <Link to="/login">Login</Link>
+                {/* Logged-in navigation */}
+                {isLogin && (
+                    <>
+                        {/* Dashboard */}
+                        <NavLink
+                            to="/dashboard"
+                            className={({ isActive }) =>
+                                isActive ? "nav-link active" : "nav-link"
+                            }
+                        >
+                            Dashboard
+                        </NavLink>
 
-                <Link to="/signup">Sign Up</Link>
+
+                        {/* Profile */}
+                        <div className="profile-container">
+
+                            <button
+                                className="profile-btn"
+                                onClick={() => setShowProfile(!showProfile)}
+                            >
+                                Profile
+                                <span className="profile-arrow">
+                                    {showProfile ? "↑" : "↓"}
+                                </span>
+                            </button>
+
+
+                            {showProfile && (
+                                <div className="profile-dropdown">
+                                    <p className="profile-email">
+                                        {user?.email || "User"}
+                                    </p>
+                                </div>
+                            )}
+
+                        </div>
+
+
+                        {/* Logout */}
+                        <button
+                            className="nav-btn logout-btn"
+                            onClick={onLogout}
+                        >
+                            Logout
+                        </button>
+                    </>
+                )}
 
             </div>
-
         </nav>
     );
 }

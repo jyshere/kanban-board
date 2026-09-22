@@ -1,126 +1,177 @@
-import Navbar from "./Navbar";
-
+import { Link } from "react-router-dom";
+import "./Home.css";
 export default function Home() {
   return (
-    <div>
-      <Navbar />
+    <div className="home-page">
 
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">Plan. Organize. Get Things Done.</h1>
-          <p className="hero-subtitle">
-            A simple and powerful Kanban workspace to organize your projects,
-            manage tasks, and keep your work moving.
+        <p className="hero-eyebrow">
+          PLAN &nbsp; / &nbsp; ORGANIZE &nbsp; / &nbsp; GET THINGS DONE
+        </p>
+
+        <h1 className="hero-title">
+          Your Tasks, Organized
+        </h1>
+
+        <p className="hero-subtitle">
+          A simple and powerful Kanban board to help you manage your
+          <br />
+          work, stay focused, and achieve your goals.
+        </p>
+      </section>
+
+
+      {/* Three Column Section */}
+      <section className="home-options">
+
+        {/* Get Started */}
+        <div className="home-card get-started-card">
+
+          <div className="card-icon get-started-icon">
+            <span>♙</span>
+          </div>
+
+          <h2 className="home-card-title">
+            Get Started
+          </h2>
+
+          <p className="home-card-subtitle">
+            Create your account and dive in.
           </p>
-          <p className="hero-description">
-            Create boards, organize tasks into columns, prioritize your work,
-            and track progress — all in one place.
+
+          <div className="steps">
+
+            <div className="step">
+              <span className="step-number">1</span>
+              <span className="step-text">
+                Click on “Get Started”
+              </span>
+            </div>
+
+            <div className="step">
+              <span className="step-number">2</span>
+              <span className="step-text">
+                Log in with your email (OTP) or Google
+              </span>
+            </div>
+
+            <div className="step">
+              <span className="step-number">3</span>
+              <span className="step-text">
+                Start organizing your tasks
+              </span>
+            </div>
+
+          </div>
+
+          <Link to="/login" className="home-card-button primary-button">
+            Get Started
+            <span>→</span>
+          </Link>
+
+          <p className="login-text">
+            Already have an account?{" "}
+            <Link to="/login">Log in</Link>
           </p>
-          <div className="hero-buttons">
-            <button className="btn btn-primary">Get Started</button>
-            <button className="btn btn-secondary">Explore Features</button>
-          </div>
+
         </div>
+
+
+        {/* Explore */}
+        <div className="home-card explore-card">
+
+          <div className="card-icon explore-icon">
+            <span>◇</span>
+          </div>
+
+          <h2 className="home-card-title">
+            Explore
+          </h2>
+
+          <p className="home-card-subtitle">
+            See what you can do.
+          </p>
+
+          <div className="feature-list">
+
+            <div className="list-item">
+              <span className="check explore-check">✓</span>
+              <span>Create and manage boards</span>
+            </div>
+
+            <div className="list-item">
+              <span className="check explore-check">✓</span>
+              <span>Add, edit and move cards</span>
+            </div>
+
+            <div className="list-item">
+              <span className="check explore-check">✓</span>
+              <span>Organize with columns</span>
+            </div>
+
+            <div className="list-item">
+              <span className="check explore-check">✓</span>
+              <span>Keep track of your progress</span>
+            </div>
+
+          </div>
+
+         
+
+        </div>
+
+
+        {/* Features */}
+        <div className="home-card features-card">
+
+          <div className="card-icon features-icon">
+            <span>☆</span>
+          </div>
+
+          <h2 className="home-card-title">
+            Features
+          </h2>
+
+          <p className="home-card-subtitle">
+            Everything you need in one place.
+          </p>
+
+          <div className="feature-list">
+
+            <div className="list-item">
+              <span className="check features-check">✓</span>
+              <span>Easy drag &amp; drop interface</span>
+            </div>
+
+            <div className="list-item">
+              <span className="check features-check">✓</span>
+              <span>Customizable columns</span>
+            </div>
+
+            <div className="list-item">
+              <span className="check features-check">✓</span>
+              <span>Task priorities (Low / Medium / High)</span>
+            </div>
+
+            <div className="list-item">
+              <span className="check features-check">✓</span>
+              <span>Due dates &amp; labels</span>
+            </div>
+
+            <div className="list-item">
+              <span className="check features-check">✓</span>
+              <span>Secure authentication</span>
+            </div>
+
+          </div>
+
+         
+
+        </div>
+
       </section>
 
-      {/* Features Section */}
-      <section className="features-section">
-        <h2 className="features-title">
-          Everything You Need to Manage Your Work
-        </h2>
-        <div className="features-grid">
-          <div className="feature-card">
-            <span className="feature-icon">📋</span>
-            <h3 className="feature-card-title">Organize Projects</h3>
-            <p className="feature-card-description">
-              Create separate boards for different projects, goals, or workflows.
-            </p>
-          </div>
-
-          <div className="feature-card">
-            <span className="feature-icon">🗂️</span>
-            <h3 className="feature-card-title">Manage Tasks</h3>
-            <p className="feature-card-description">
-              Create, edit, and delete tasks while keeping everything organized
-              inside your boards.
-            </p>
-          </div>
-
-          <div className="feature-card">
-            <span className="feature-icon">🔄</span>
-            <h3 className="feature-card-title">Drag & Drop</h3>
-            <p className="feature-card-description">
-              Move tasks between To Do, In Progress, and Done with an intuitive
-              drag-and-drop experience.
-            </p>
-          </div>
-
-          <div className="feature-card">
-            <span className="feature-icon">🎯</span>
-            <h3 className="feature-card-title">Set Priorities</h3>
-            <p className="feature-card-description">
-              Identify important tasks quickly by assigning Low, Medium, or High
-              priority.
-            </p>
-          </div>
-
-          <div className="feature-card">
-            <span className="feature-icon">📅</span>
-            <h3 className="feature-card-title">Track Deadlines</h3>
-            <p className="feature-card-description">
-              Add due dates to tasks and keep your work on schedule.
-            </p>
-          </div>
-
-          <div className="feature-card">
-            <span className="feature-icon">⚡</span>
-            <h3 className="feature-card-title">Stay Productive</h3>
-            <p className="feature-card-description">
-              A clean workspace designed to help you focus on what needs to be
-              done.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="how-it-works-section">
-        <h2 className="how-it-works-title">How It Works</h2>
-        <div className="how-it-works-steps">
-          <div className="step-card">
-            <span className="step-number">01</span>
-            <h3 className="step-title">Create a Board</h3>
-            <p className="step-description">
-              Start a workspace for your project or goal.
-            </p>
-          </div>
-
-          <div className="step-card">
-            <span className="step-number">02</span>
-            <h3 className="step-title">Add Your Tasks</h3>
-            <p className="step-description">
-              Break your work into manageable tasks and add the details you need.
-            </p>
-          </div>
-
-          <div className="step-card">
-            <span className="step-number">03</span>
-            <h3 className="step-title">Move & Track</h3>
-            <p className="step-description">
-              Drag tasks across your workflow as your work progresses.
-            </p>
-          </div>
-
-          <div className="step-card">
-            <span className="step-number">04</span>
-            <h3 className="step-title">Get Things Done</h3>
-            <p className="step-description">
-              Keep everything organized and see your progress at a glance.
-            </p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
